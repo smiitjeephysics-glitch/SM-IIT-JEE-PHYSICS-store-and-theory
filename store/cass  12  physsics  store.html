@@ -1,0 +1,647 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G10 Educational Platform - Study Material Store</title>
+<style>
+  body {margin:0; font-family:"Segoe UI",sans-serif; display:flex; height:100vh; overflow:hidden; background:url('https://i.ibb.co/Ps5ykLDJ/We-help-you-grow.jpg') no-repeat center center fixed; background-size:cover; color:white;}
+  .sidebar {width:200px; background:#1a1a2e; padding:20px; overflow-y:auto; transition:transform 0.3s ease;}
+  .sidebar img {width:110px; display:block; margin:0 auto 10px; border-radius:14px;}
+  .sidebar h2 {text-align:center; color:#00aaff;}
+  .sidebar-btn {display:block; background:#0078ff; color:white; text-align:center; padding:10px; margin:8px 0; border-radius:8px; text-decoration:none;}
+  @media (max-width:900px){.sidebar {position:fixed; top:0; left:0; height:100vh; transform:translateX(-100%); z-index:999;} .sidebar.open{transform:translateX(0);} }
+  #menuBtn {display:none; position:fixed; top:12px; left:12px; background:#0078ff; color:white; border:none; font-size:22px; padding:8px 14px; border-radius:8px; z-index:1000; cursor:pointer;}
+  @media(max-width:900px){#menuBtn{display:block;}}
+
+  .home-btn {position:fixed; background:#ffcc00; padding:14px 18px; border-radius:50px; color:#000; font-weight:bold; text-decoration:none; z-index:9999; box-shadow:0 0 10px #000;}
+  @media(min-width:901px){.home-btn{top:22px; right:22px; bottom:auto;}} 
+  @media(max-width:900px){.home-btn{bottom:18px; right:18px; top:auto;}}
+
+  .content {flex:1; background:rgba(0,0,0,0.5); padding:20px; overflow-y:auto;}
+  .title {text-align:center; font-size:1.6rem; font-weight:bold; margin-bottom:12px; color:#ffd700;}
+
+  /* search bar */
+  .search-row {display:flex; gap:8px; align-items:center; justify-content:center; margin-bottom:14px;}
+  .search-row input[type="search"] {
+    width:420px; max-width:80%;
+    padding:10px 12px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.04);
+    color: #fff;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  }
+  .search-row button {padding:10px 12px; border-radius:8px; background:#0078ff; border:none; color:#fff; cursor:pointer;}
+
+  .book-grid {display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+  
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+  
+.book-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  background: #00000033;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+  
+  .book-card h3 {margin:5px 0; color:#66ccff;}
+  .price {color:#ffd700; font-weight:bold; margin:5px 0;}
+  .btn-row {display:flex; gap:8px; justify-content:center; flex-wrap:wrap;}
+  .btn {padding:8px 12px; border-radius:6px; border:none; cursor:pointer; color:white;}
+  .btn.buy {background: linear-gradient(145deg,#3a3a3a,#262626); border:1px solid #ff8800;}
+  .btn.primary {background:#0078ff;}
+  .btn.ghost {background: transparent; border:1px solid rgba(255,255,255,0.2); font-size:0.85rem;}
+
+  /* 🔥 UNIQUE DROPDOWN BUTTON COLOR */
+  .dropdown-btn {
+    background: linear-gradient(145deg, #ff9500, #e67e00);
+    color: #fff !important;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  .dropdown-btn:hover {
+    background: linear-gradient(145deg, #ffa31a, #cc6f00);
+  }
+
+  .modal-overlay {position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); display:none; align-items:center; justify-content:center; z-index:9999;}
+  .modal-box {width:90%; max-width:1000px; background:#222; border-radius:14px; padding:20px; color:white; display:flex; gap:20px; flex-wrap:wrap;}
+  .modal-left {flex:1; text-align:center;}
+  .modal-right {flex:1; display:flex; flex-direction:column; gap:8px;}
+
+  .slider, .pdf-frame {width:100%; height:320px; border-radius:10px; background:black;}
+  .thumbs {display:flex; gap:6px; overflow-x:auto; justify-content:center; margin-top:10px;}
+  .thumbs img {width:60px; height:60px; object-fit:cover; border-radius:6px; cursor:pointer; opacity:0.9; border:2px solid transparent;}
+  .thumbs img.active {border-color:#ffd700; opacity:1;}
+
+  .nav-arrow {position:absolute; top:50%; transform:translateY(-50%); width:36px; height:36px; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:6px;}
+  .nav-left {left:5px;} .nav-right {right:5px;}
+  .nav-arrow svg {width:20px; height:20px; fill:#fff;}
+
+  .desc {flex:1; overflow:auto; background: rgba(255,255,255,0.05); padding:8px; border-radius:8px; font-size:0.9rem; color:#ddd; display:none;}
+  .close-btn {background:red; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:14px;}
+  @media (max-width:900px){ .modal-box {flex-direction:column;} .slider, .pdf-frame {height:42vh;} }
+
+  .promo {margin:6px 0; font-size:0.9rem; color:#ffcc00;}
+  .discounted {color:#00ff00; font-weight:bold;}
+  
+  .drop-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .drop-content.open {
+    max-height: 500px;
+  }
+
+  .no-results {text-align:center;color:#ddd;padding:14px;font-size:1rem;}
+  
+  
+  
+  
+.book-card.featured {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 136, 0, 0.4),
+    rgba(199, 97, 80, 0.4)
+  );
+  border: 2px solid rgba(255, 215, 0, 0.75);
+  box-shadow: 0 6px 16px rgba(255, 200, 0, 0.35);
+  backdrop-filter: blur(6px); /* slightly stronger blur to compensate */
+}
+
+
+
+.book-card.featured h3 {
+  color: #111;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.book-card.featured .price {
+  color: #111;
+  font-size: 1.1rem;
+}
+
+
+.book-card.featured::before {
+  content: "🔥 BEST VALUE";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.85);
+  color: #ffd700;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.book-card {
+  position: relative;
+  padding: 14px;
+  border-radius: 14px;
+
+  /* ✅ yellow border for ALL products */
+  border: 1.5px solid rgba(255, 215, 0, 0.7);
+  background: rgba(255,255,255,0.03);
+}
+
+
+.book-card.featured .price {
+  color: #ffd700;              /* gold yellow */
+  font-weight: 800;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+}
+
+  
+</style>
+</head>
+<body>
+
+<button id="menuBtn">☰</button>
+<a href="https://s-m-12-physics.onrender.com" class="home-btn" target="_blank">Home</a>
+
+<div class="sidebar" id="sidebar">
+  <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" />
+  <h2>G10 Educational Platform</h2>
+
+  <p><b>Location:</b> Jayanagar Chariali, Beltola Bazaar Road, Guwahati</p>
+
+  <a class="sidebar-btn" href="https://www.g10educationalplatformindia.co.in" target="_blank">
+    🌐 Visit Website
+  </a>
+
+  <!-- 🟧 DROPDOWN BUTTON WITH SPECIAL COLOR -->
+  <div id="storeToggle" class="sidebar-btn dropdown-btn" style="cursor:pointer;">
+    🏬 Store ▼
+  </div>
+
+  <div id="storeMenu" class="drop-content" style="padding-left:10px; margin-top:5px;">
+    <a class="sidebar-btn" href="https://www.g10educationalplatformindia.co.in">Class 9 Math</a>
+    <a class="sidebar-btn" href="https://smclass9science-ai.github.io/Science-9-store-Std-material/science 9 store.html">Class 9 Science</a>
+    <a class="sidebar-btn" href="cl10s.html">Class 10 Science</a>
+    <a class="sidebar-btn" href="cl10m.html">Class 10 Math</a>
+    <a class="sidebar-btn" href="cl11c.html">Class 11 Chemistry</a>
+    <a class="sidebar-btn" href="cl11p.html">Class 11 Physics</a>
+    <a class="sidebar-btn" href="cl11b.html">Class 11 Biology</a>
+    <a class="sidebar-btn" href="cl11m.html">Class 11 Math</a>
+    <a class="sidebar-btn" href="cl12c.html">Class 12 Chemistry</a>
+    <a class="sidebar-btn" href="https://smclass12physics-afk.github.io/S-M_12-physics-and-store/physics 12 store.html">Class 12 Physics</a>
+    <a class="sidebar-btn" href="cl14b.html">Class 12 Biology</a>
+    <a class="sidebar-btn" href="cl15m.html">Class 12 Math</a>
+    <a class="sidebar-btn" href="iitjeec.html">IIT-JEE Chemistry</a>
+    <a class="sidebar-btn" href="iitjeep.html">IIT-JEE Physics</a>
+    <a class="sidebar-btn" href="iitjeem.html">IIT-JEE Math</a>
+    <a class="sidebar-btn" href="neetc.html">NEET Chemistry</a>
+    <a class="sidebar-btn" href="neetb.html">NEET Biology</a>
+    <a class="sidebar-btn" href="neetm.html">NEET Physics</a>
+  </div>
+
+  <a class="sidebar-btn" 
+     href="https://gten-educational-platform.github.io/Class-12/photo%20gallelry.html" 
+     target="_blank">
+     🖼️ Photo Gallery
+  </a>
+
+  <a class="sidebar-btn" 
+     href="https://my.unogreen.in/my-digital-card/73x8rq" 
+     target="_blank">
+     📞 Contact Us
+  </a>
+</div>
+
+
+<div class="content">
+  <div class="title">📚 Study Materials – Class 12(CHEMSITRY)</div>
+
+  <!-- SEARCH ROW -->
+  <div class="search-row" role="search" aria-label="Search study materials">
+    <input id="searchInput" type="search" placeholder="Search by title (e.g. Physics, Chemistry)..." />
+    <button id="clearSearch">Clear</button>
+  </div>
+
+  <div class="book-grid" id="bookGrid"></div>
+  <div id="noResults" class="no-results" style="display:none">No items found.</div>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <div class="modal-left">
+      <div style="position:relative;">
+        <div class="nav-arrow nav-left" id="prevBtn"><svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg></div>
+        <img class="slider" id="sliderImage">
+        <div class="nav-arrow nav-right" id="nextBtn"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
+      </div>
+      <div class="thumbs" id="thumbs"></div>
+      <iframe id="pdfFrame" class="pdf-frame" src="" style="display:none;"></iframe>
+    </div>
+
+    <div class="modal-right">
+      <h2 id="modalTitle"></h2>
+      <div class="price" id="modalPrice"></div>
+
+      <div class="promo">Click below to get your promo code! The promo code is only valid for the first 100 customers, so it may not be applicable if you are after the 100th customer</div>
+
+      <div class="desc" id="modalDesc"></div>
+
+      <div style="display:flex;gap:6px;flex-wrap:wrap; margin-top:8px;">
+        <button id="getPromoBtn" class="btn primary">Get Promo Code</button>
+      </div>
+
+      <div style="display:flex;gap:6px;flex-wrap:wrap; margin-top:8px;">
+        <a id="buyNowBtn" class="btn buy" target="_blank">Buy Now</a>
+        <button id="previewBtn" class="btn primary">Preview PDF</button>
+        <button id="descBtn" class="btn ghost">Description</button>
+      </div>
+
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Sidebar
+const menuBtn=document.getElementById('menuBtn');
+const sidebar=document.getElementById('sidebar');
+menuBtn.onclick=()=>sidebar.classList.toggle('open');
+document.addEventListener('click',(e)=>{if(!sidebar.contains(e.target)&&e.target!==menuBtn) sidebar.classList.remove('open');});
+
+// Promo Codes
+const promoCodes = {
+  physics: { code:"G10EP-2SM10%", discount:10 },
+  physicsC:{ code:"G10EP-2SM10%", discount:0.787 },
+  biology:{ code:"G10EP-2SM16%", discount:10 },
+  math:{ code:"No Promo Code", discount:0 }
+};
+
+// Books Data
+const books=[
+{
+  id: 'physicsC',
+  category: 'physics',
+  title: 'COMPLET PACKAGE + FREE DERIVATION BOOKLET',
+  price: 1270,
+  featured: true,
+  images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+   pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/CSMP',
+    description:'A complete Chemistry study package designed for clarity and concept-building.'
+},
+    
+  {
+    id:'physics',
+    title:'SOLUTIONS',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    {
+    id:'physics',
+    title:'ELECTROCHEMISTRY',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    {
+    id:'physics',
+    title:'CHEMICAL KINETICS',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    {
+    id:'physics',
+    title:'d- AND f-BLOCK ELEMENTS',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    {
+    id:'physics',
+    title:'COORDINATION COMPOUNDS',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    {
+    id:'physics',
+    title:'HALOALKANES AND HALOARENES',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    {
+    id:'physics',
+    title:'ALCOHOLS, PHENOLS AND ETHERS',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    {
+    id:'physics',
+    title:'ALDEHYDES, KETONES AND CARBOXYLIC ACIDS',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    {
+    id:'physics',
+    title:'AMINES',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    {
+    id:'physics',
+    title:'BIOMOLECULES',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png',
+      'https://dummyimage.com/400x300/222/fff&text=Physics+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'A complete Physics study package designed for clarity and concept-building.'
+  },
+    
+  {
+    id:'physics',
+    title:'CHEMISTRY IN EVERYDAY LIFE',
+    price:100,
+    images:[
+      'https://i.ibb.co/JwDhDRzx/MATHS-CL-9.jpg',
+      'https://dummyimage.com/400x300/777/fff&text=Biology+2',
+      'https://dummyimage.com/400x300/888/fff&text=Biology+3'
+    ],
+    pdfLink:'https://drive.google.com/file/d/1nG2KCGVmUVBve7IgkZOCndS1zxBp-YgK/preview',
+    paymentLink:'https://payments.cashfree.com/forms/100SM',
+    description:'Easy-to-learn Biology notes with labelled diagrams and flowcharts.'
+  }
+];
+
+// Render Cards (image click opens modal)
+const bookGrid=document.getElementById('bookGrid');
+const noResults = document.getElementById('noResults');
+
+function renderCards(filter=''){
+  // filter: lowercase string
+  const query = (filter || '').trim().toLowerCase();
+  bookGrid.innerHTML='';
+
+  const list = books.filter(b => {
+    if(!query) return true;
+    return b.title.toLowerCase().includes(query) || b.id.toLowerCase().includes(query);
+  });
+
+  if(list.length === 0){
+    noResults.style.display = 'block';
+  } else {
+    noResults.style.display = 'none';
+  }
+
+  list.forEach((b,idx)=>{
+  const card = document.createElement('div');
+  card.className = 'book-card' + (b.featured ? ' featured' : '');
+
+    // clicking image opens modal (keeps same openModal signature)
+    card.innerHTML=
+      `<img src="${b.images[0]}" alt="${b.title}" onclick="openModal(${JSON.stringify(b).replace(/"/g,'&quot;')})">
+       <h3>${b.title}</h3>
+       <div class="price">₹${b.price}</div>
+       <div class="btn-row">
+         <button class="btn primary" data-idx="${books.indexOf(b)}" data-action="open">Preview / Buy</button>
+       </div>`;
+    bookGrid.appendChild(card);
+  });
+}
+renderCards();
+
+// SEARCH wiring
+const searchInput = document.getElementById('searchInput');
+const clearSearch = document.getElementById('clearSearch');
+
+searchInput.addEventListener('input', (e) => {
+  renderCards(e.target.value);
+});
+clearSearch.addEventListener('click', () => {
+  searchInput.value = '';
+  renderCards('');
+});
+
+// Modal Logic
+const modal=document.getElementById('modal');
+const sliderImage=document.getElementById('sliderImage');
+const pdfFrame=document.getElementById('pdfFrame');
+const thumbs=document.getElementById('thumbs');
+const modalTitle=document.getElementById('modalTitle');
+const modalPrice=document.getElementById('modalPrice');
+const modalDesc=document.getElementById('modalDesc');
+const buyNowBtn=document.getElementById('buyNowBtn');
+const previewBtn=document.getElementById('previewBtn');
+const descBtn=document.getElementById('descBtn');
+const prevBtn=document.getElementById('prevBtn');
+const nextBtn=document.getElementById('nextBtn');
+const getPromoBtn=document.getElementById('getPromoBtn');
+
+let currentBook=null, currentIndex=0;
+
+// support both inline data-idx and image onclick which passes book object
+bookGrid.addEventListener('click',(e)=>{
+  const idx=e.target.dataset.idx;
+  if(e.target.dataset.action==='open') openModal(books[idx]);
+});
+
+// openModal expects a book object (we changed renderCards image onclick to pass the book object)
+function openModal(book){
+  // if a JSON string was injected, ensure it's treated as object; if it's reference, it's already object
+  if(typeof book === 'string') {
+    try { book = JSON.parse(book); } catch(e){ /* ignore */ }
+  }
+
+  currentBook = book;
+  currentIndex = 0;
+
+  modalTitle.textContent=book.title;
+  modalPrice.innerHTML=`₹${book.price}`;
+  buyNowBtn.href=book.paymentLink;
+
+  sliderImage.src=book.images[currentIndex];
+  pdfFrame.style.display='none';
+  sliderImage.style.display='block';
+  thumbs.style.display='flex';
+
+  thumbs.innerHTML='';
+  modalDesc.style.display='none';
+
+  book.images.forEach((src,i)=>{
+    const t=document.createElement('img');
+    t.src=src;
+    t.dataset.idx=i;
+    t.className=i===0?'active':'';
+    t.addEventListener('click',()=>{
+      currentIndex=i;
+      updateSlider();
+    });
+    thumbs.appendChild(t);
+  });
+
+  modal.style.display='flex';
+}
+
+function closeModal(){
+  modal.style.display='none';
+  pdfFrame.src='';
+}
+
+function updateSlider(){
+  sliderImage.src=currentBook.images[currentIndex];
+  Array.from(thumbs.children).forEach(t=>{
+    t.classList.toggle('active', Number(t.dataset.idx)===currentIndex);
+  });
+}
+
+prevBtn.addEventListener('click',()=>{
+  currentIndex=(currentIndex-1+currentBook.images.length)%currentBook.images.length;
+  updateSlider();
+});
+
+nextBtn.addEventListener('click',()=>{
+  currentIndex=(currentIndex+1)%currentBook.images.length;
+  updateSlider();
+});
+
+previewBtn.addEventListener('click',()=>{
+  pdfFrame.src=currentBook.pdfLink;
+  pdfFrame.style.display='block';
+  sliderImage.style.display='none';
+  thumbs.style.display='none';
+});
+
+descBtn.addEventListener('click',()=>{
+  modalDesc.style.display='block';
+  modalDesc.textContent=currentBook.description;
+
+  pdfFrame.style.display='none';
+  sliderImage.style.display='block';
+  thumbs.style.display='flex';
+  modalDesc.scrollIntoView({behavior:'smooth'});
+});
+
+// PROMO BUTTON FIX
+getPromoBtn.addEventListener('click',()=>{
+
+  const p = promoCodes[currentBook.id];
+  const discount = p.discount;
+
+  let finalPrice = currentBook.price;
+
+  if(discount > 0){
+    finalPrice = currentBook.price - (currentBook.price * (discount / 100));
+  }
+
+  modalPrice.innerHTML = `
+    <span style="text-decoration:line-through;">₹${currentBook.price}</span>
+    <span class="discounted">₹${finalPrice.toFixed(0)}</span>
+    <br><br>
+    <span style="color:#ffcc00">Copy the promo code so you can paste it at the time of payment :
+      <b style="font-size:1.1rem;">${p.code}</b> 
+    </span>
+  `;
+});
+
+// --- STORE TOGGLE (as before) ---
+const storeToggle = document.getElementById('storeToggle');
+const storeMenu = document.getElementById('storeMenu');
+
+storeToggle.addEventListener('click', (ev) => {
+  ev.stopPropagation();
+  storeMenu.classList.toggle('open');
+});
+
+storeMenu.addEventListener('click', (ev) => ev.stopPropagation());
+
+document.addEventListener('click', () => {
+  storeMenu.classList.remove('open');
+});
+
+// Keep existing simple toggleStoreMenu() function for compatibility with earlier code if used
+function toggleStoreMenu(){
+  const menu = document.getElementById("storeMenu");
+  menu.style.display = menu.style.display === "none" ? "block" : "none";
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
