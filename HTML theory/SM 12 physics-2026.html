@@ -215,7 +215,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 }
 
 
-	
+	#bookmarkBtn.active{
+  background: gold;
+  color: black;
+}
 	
 	
 	
@@ -228,125 +231,176 @@ body { display:flex; height:100vh; overflow:hidden; }
 
 <div id="sidebar" role="navigation" aria-label="Chapters">
 
-  <!-- ★★ ADDED BUTTON HERE ★★ -->
-<a href="https://smiitjeephysics-glitch.github.io/SM-IIT-JEE-PHYSICS-store-and-theory/store/cass  12  physsics  store.html" 
+    <!-- ★★ ADDED BUTTON HERE ★★ -->
+<a href="https://smiitjeeche-art.github.io/sm-IIT-JEE-Chem-Data/SM store-chm/science 9 store.html" 
    class="buyBtn" target="_blank">BUY HARD COPY</a>
+   
+   <div style="display:flex; gap:8px; margin-bottom:12px;">
+  <button onclick="showClass('class11')" style="flex:1; padding:8px; border-radius:6px; border:none; background:#0ea5e9; color:white; cursor:pointer;">
+    11 Portion
+  </button>
+  <button onclick="showClass('class12')" style="flex:1; padding:8px; border-radius:6px; border:none; background:#22c55e; color:white; cursor:pointer;">
+    12 Portion
+  </button>
+</div>
 
 <h2>Chapters</h2>
 
-  <div class="chapter">Chapter 1 ELECTRIC CHARGES & FIELDS 
-        <div class="subList">
-            <div onclick="loadSub('C1_T1')">TOPPER’S SPECIAL NOTES-1</div>
-            <div onclick="loadSub('C1_Q1')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C1_N1')">NCERT</div>
-			<div onclick="loadSub('C1_A1')">NCERT SOLUTION</div>
-  </div>
- </div>
-   <div class="chapter">Chapter 2 ELECTROSTATIC POTENTIAL & CAPACITANCE  
-        <div class="subList">
-           <div onclick="loadSub('C2_T2')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C2_Q2')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C2_N2')">NCERT</div>
-			<div onclick="loadSub('C2_A2')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 3 CURRENT ELECTRICITY 
-        <div class="subList">
-            <div onclick="loadSub('C3_T3')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C3_Q3')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C3_N3')">NCERT</div>
-			<div onclick="loadSub('C3_A3')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 4 MOVING CHARGES & MAGNETISM 
-        <div class="subList">
-           <div onclick="loadSub('C4_T4')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C4_Q4')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C4_N4')">NCERT</div>
-			<div onclick="loadSub('C4_A4')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 5 MAGNETISM & MATTER 
-        <div class="subList">
-          <div onclick="loadSub('C5_T5')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C5_Q5')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C5_N5')">NCERT</div>
-			<div onclick="loadSub('C5_A5')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 6 ELECTROMAGNETIC INDUCTION 
-        <div class="subList">
-           <div onclick="loadSub('C6_T6')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C6_Q6')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C6_N6')">NCERT</div>
-			<div onclick="loadSub('C6_A6')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 7 ALTERNATING CURRENT 
-        <div class="subList">
-            <div onclick="loadSub('C7_T7')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C7_Q7')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C7_N7')">NCERT</div>
-			<div onclick="loadSub('C7_A7')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 8 ELECTROMAGNETIC WAVES 
-        <div class="subList">
-           <div onclick="loadSub('C8_T8')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C8_Q8')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C8_N8')">NCERT</div>
-			<div onclick="loadSub('C8_A8')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 9 RAY OPTICS & OPTICAL INSTRUMENTS 
-        <div class="subList">
-            <div onclick="loadSub('C9_T9')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C9_Q9')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C9_N9')">NCERT</div>
-			<div onclick="loadSub('C9_A9')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 10 WAVE OPTICS 
-        <div class="subList">
-            <div onclick="loadSub('C10_T10')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C10_Q10')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C10_N10')">NCERT</div>
-			<div onclick="loadSub('C10_A10')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 11 DUAL NATURE OF RADIATION & MATTER
-        <div class="subList">
-            <div onclick="loadSub('C11_T11')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C11_Q11')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C11_N11')">NCERT</div>
-			<div onclick="loadSub('C11_A11')">NCERT SOLUTION</div>
-        </div>
- </div>
-   <div class="chapter">Chapter 12 ATOMS 
-        <div class="subList">
-            <div onclick="loadSub('C12_T12')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C12_Q12')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C12_N12')">NCERT</div>
-			<div onclick="loadSub('C12_A12')">NCERT SOLUTION</div>
-        </div>
- </div>
-    <div class="chapter">Chapter 13 NUCLEI 
-        <div class="subList">
-            <div onclick="loadSub('C13_T13')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C13_Q13')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C13_N13')">NCERT</div>
-			<div onclick="loadSub('C13_A13')">NCERT SOLUTION</div>
-        </div>
- </div>
-    <div class="chapter">Chapter 14 SEMICONDUCTORS 
-        <div class="subList">
-           <div onclick="loadSub('C14_T14')">TOPPER’S SPECIAL NOTES</div>
-            <div onclick="loadSub('C14_Q14')">SUBJECTIVE QUESTION WITH SOLUTION</div>
-			<div onclick="loadSub('C14_N14')">NCERT</div>
-			<div onclick="loadSub('C14_A14')">NCERT SOLUTION</div>
-        </div>
+<div id="class11">
+
+	<div class="chapter">Chapter 1 Coming soon
+    <div class="subList">
+        <div onclick="loadSub('C111_T111')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C111_Q111')"> QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C111_N111')">XXX</div>
+        <div onclick="loadSub('C111_A111')">XXX</div>
     </div>
 </div>
+
+<div class="chapter">Chapter 2 comming soon
+    <div class="subList">
+        <div onclick="loadSub('C1_T1')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C1_Q1')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C1_N1')">NCERT</div>
+        <div onclick="loadSub('C1_A1')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+
+</div>   <!-- CLOSE CLASS 11 -->
+
+<div id="class12" style="display:none;">
+
+
+
+<div class="chapter">Chapter 1 SOLUTIONS
+    <div class="subList">
+        <div onclick="loadSub('C1_T1')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C1_Q1')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C1_N1')">NCERT</div>
+        <div onclick="loadSub('C1_A1')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 2 ELECTROCHEMISTRY
+    <div class="subList">
+        <div onclick="loadSub('C2_T2')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C2_Q2')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C2_N2')">NCERT</div>
+        <div onclick="loadSub('C2_A2')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 3 CHEMICAL KINETICS
+    <div class="subList">
+        <div onclick="loadSub('C3_T3')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C3_Q3')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C3_N3')">NCERT</div>
+        <div onclick="loadSub('C3_A3')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 4 SURFACE CHEMISTRY
+    <div class="subList">
+        <div onclick="loadSub('C4_T4')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C4_Q4')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C4_N4')">NCERT</div>
+        <div onclick="loadSub('C4_A4')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 5 THE p-BLOCK ELEMENTS (Groups 15–18)
+    <div class="subList">
+        <div onclick="loadSub('C5_T5')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C5_Q5')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C5_N5')">NCERT</div>
+        <div onclick="loadSub('C5_A5')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 6 d- AND f-BLOCK ELEMENTS
+    <div class="subList">
+        <div onclick="loadSub('C6_T6')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C6_Q6')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C6_N6')">NCERT</div>
+        <div onclick="loadSub('C6_A6')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 7 COORDINATION COMPOUNDS
+    <div class="subList">
+        <div onclick="loadSub('C7_T7')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C7_Q7')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C7_N7')">NCERT</div>
+        <div onclick="loadSub('C7_A7')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+
+<div class="chapter">Chapter 8 HALOALKANES AND HALOARENES
+    <div class="subList">
+        <div onclick="loadSub('C8_T8')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C8_Q8')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C8_N8')">NCERT</div>
+        <div onclick="loadSub('C8_A8')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 9 ALCOHOLS, PHENOLS AND ETHERS
+    <div class="subList">
+        <div onclick="loadSub('C9_T9')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C9_Q9')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C9_N9')">NCERT</div>
+        <div onclick="loadSub('C9_A9')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 10 ALDEHYDES, KETONES AND CARBOXYLIC ACIDS
+    <div class="subList">
+        <div onclick="loadSub('C10_T10')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C10_Q10')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C10_N10')">NCERT</div>
+        <div onclick="loadSub('C10_A10')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 11 AMINES
+    <div class="subList">
+        <div onclick="loadSub('C11_T11')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C11_Q11')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C11_N11')">NCERT</div>
+        <div onclick="loadSub('C11_A11')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 12 BIOMOLECULES
+    <div class="subList">
+        <div onclick="loadSub('C12_T12')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C12_Q12')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C12_N12')">NCERT</div>
+        <div onclick="loadSub('C12_A12')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 13 POLYMERS
+    <div class="subList">
+        <div onclick="loadSub('C13_T13')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C13_Q13')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C13_N13')">NCERT</div>
+        <div onclick="loadSub('C13_A13')">NCERT SOLUTION</div>
+    </div>
+</div>
+
+<div class="chapter">Chapter 14 CHEMISTRY IN EVERYDAY LIFE
+    <div class="subList">
+        <div onclick="loadSub('C14_T14')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C14_Q14')">SUBJECTIVE QUESTION WITH SOLUTION</div>
+        <div onclick="loadSub('C14_N14')">NCERT</div>
+        <div onclick="loadSub('C14_A14')">NCERT SOLUTION</div>
+    </div>
+</div>
+</div>
+</div> <!-- CLOSE SIDEBAR -->
 
 <div id="viewer" role="main" aria-label="Document viewer">
   <div id="imgWrapper">
@@ -361,6 +415,8 @@ body { display:flex; height:100vh; overflow:hidden; }
   <button class="btn" id="prevBtn" aria-label="Previous">◀</button>
   <input type="number" id="pageInput" aria-label="Page number">
   <button class="btn" id="nextBtn" aria-label="Next">▶</button>
+  <button class="btn" id="bookmarkBtn">🔖</button>
+  <button class="btn" onclick="showBookmarks()">📑</button>
   <button class="btn" id="zoomIn" aria-label="Zoom in">⊕</button>
   <button class="btn" id="zoomOut" aria-label="Zoom out">⊖</button>
      <button class="btn" id="homeBtn" onclick="window.open('https://gten-educational-platform.github.io/Class-12/class 12 button.html')">🏠</button>
@@ -372,94 +428,52 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs
 
 /* ================= DATA (preserved) ================= */
 let data = {
-	  "C1_T1":[
-  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0001.jpg",
-    "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0002.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0003.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0004.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0005.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0006.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0007.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0008.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0009.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0010.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0011.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0012.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0013.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0014.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0015.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0016.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0017.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0018.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0019.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0020.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0021.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0022.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0023.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0024.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0025.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0026.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0027.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0028.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0029.jpg",
-    "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/1 ELECTRIC CHARGES AND FIELDS 2025_page-0030.jpg"
+
+		  "C111_T111":[
+   "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0001.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0002.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0003.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0004.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0005.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0006.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0007.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0008.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0009.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0010.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0011.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0012.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0013.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0014.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0015.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0016.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0017.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0018.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0019.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0020.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0021.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0022.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0023.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-124_page-0001.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0025.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0026.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0027.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0028.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0029.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0030.jpg",
+  "https://chemistry-g10ep.github.io/SM-IIT-JEE/Hydrocarbon-Theory/HYDROCARBON -theory-2026-1_page-0031.jpg"
+  
+   
+  
      ],
-	 	  "C_Q1":[
+	 	  "C111_Q111":[
   "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
     "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
     "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
      ],
-	 	  "C1_N1":[
-      "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0001.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0002.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0003.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0004.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0005.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0006.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0007.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0008.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0009.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0010.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0011.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0012.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0013.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0014.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0015.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0016.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0017.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0018.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0019jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0020.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0021.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0022.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0023.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0024.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0025.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0026.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0027.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0028.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0029.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0030.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0031.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0032.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0033.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0034.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0035.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0036.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0037.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0038.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0039.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0040.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0041.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0042.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0043.jpg",
-	  "https://g10educationalplatform-physics.github.io/S-M-12-PHY-ELECTROSTATICS/THEORY/NCERT- ELECTRIC CHARGES AND FIELDS/Chapter 1_page-0044.jpg"
-	  
-	  
-	  
-	  
-	  
+	 	  "C111_N111":[
+      "https://jitenclass9.github.io/S-M-MATTER-IN-OUR-SUR/MATTER IN OUR SURROUNDING NCERT.pdf"
      ],
+	 
 	  "C_A1":[
   "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
     "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
@@ -468,583 +482,17 @@ let data = {
 
 
 
-	  "C2_T2":[
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0009.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0011.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0012.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0013.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0014.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0015.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0016.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0017.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0018.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0019.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0020.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0021.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0022.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0023.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0024.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0025.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0026.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0027.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0028.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0029.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-POTEN--CAP/2 ELECTROSTATIC POTENTIAL AND CAPACITANCE-2026_page-0030.jpg"
-   
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C_N":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
 
 
-
-
-  "C3_T3":[
-    "https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0001.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0002.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0003.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0004.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0005.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0006.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0007.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0008.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0009.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0010.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0011.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0012.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0013.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0014.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0015.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0016.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0017.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0018.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0019.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0020.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0021.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0022.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0023.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0024.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0025.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0026.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0027.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0028.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0029.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0030.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0031.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0032.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0033.jpg",
-	"https://g10educationalplatform-physics.github.io/SM-12-CURRENT--ELCTY/3 CURRENT ELECTRICITY 2026_page-0034.jpg"
 	
-  ],
-
-       "C3_Q3":[
-	"https://jitenclass9.github.io/S-M-ATOMS-AND-MOLECULES/SUBJECTIVE QUESTION/3. ATOMS AND MOLECULESsubjective question- 2025_page-0001.jpg",
-   "https://jitenclass9.github.io/S-M-ATOMS-AND-MOLECULES/SUBJECTIVE QUESTION/3. ATOMS AND MOLECULESsubjective question- 2025_page-0060.jpg"
-     ],
-   "C3_N3":[
-    "https://jitenclass9.github.io/S-M-ATOMS-AND-MOLECULES/ATOMS AND MOLECULES NCERT.pdf"
-     ],
-	  "C_A":[
-	"",
-    "",
-    ""
-     ],
 	 
 	 
 	 
-		  "C4_T4":[
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0009.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0011.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0012.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0013.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0014.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0015.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0016.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0017.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0018.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0019.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0020.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0021.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0022.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0023.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0024.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0025.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0026.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0027.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0028.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MOV--CH-MAG/4 MAGNETIC EFFECT OF CURRENT-2026_page-0029.jpg"
-
-     ],
-	 	  "C_Q":[
+	 
+	 	  "C_T":[
   "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
     "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
     "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C_N":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 
-	 
-	 
-	 	  "C5_T5":[
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0009.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0011.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0012.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0013.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0014.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0015.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0016.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0017.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0018.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0019.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0020.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0021.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0022.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0023.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0024.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0025.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0026.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0027.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0028.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0029.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-MAGN-MATTER/5 MAGNETISM & MATTER-2026_page-0030.jpg"
-  
-    
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C_N":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 
-	 
-	 
-"C6_T6":[
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0001.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0002.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0003.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0004.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0005.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0006.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0007.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0008.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0009.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0010.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0011.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0012.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0013.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0014.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0015.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0016.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0017.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0018.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0019.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0020.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG--IND/6 ELECTROMAGNETIC INDUCTION 2026_page-0021.jpg"
-   
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C6_N6":[
-      "https://jitenclass9.github.io/S-M-TUSSUE/TISSUES NCERT.pdf"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://jitenclass9.github.io/S-M-TUSSUE/TISSUES NCERT.pdf"
-     ],
-	 
-	 
-	 
-	 	  "C7_T7":[
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0009.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0011.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0012.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0013.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0014.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0015.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0016.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0017.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0018.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0019.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0020.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0021.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0022.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0023.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0024.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0025.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0026.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0027.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0028.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0029.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0030.jpg"
-  
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C_N":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 
-	 
-	 
-	 	  "C8_T8":[
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG-WAVE/8 ELECTROMAGNETIC WAVES-2026_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG-WAVE/8 ELECTROMAGNETIC WAVES-2026_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG-WAVE/8 ELECTROMAGNETIC WAVES-2026_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG-WAVE/8 ELECTROMAGNETIC WAVES-2026_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG-WAVE/8 ELECTROMAGNETIC WAVES-2026_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG-WAVE/8 ELECTROMAGNETIC WAVES-2026_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG-WAVE/8 ELECTROMAGNETIC WAVES-2026_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG-WAVE/8 ELECTROMAGNETIC WAVES-2026_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ELECTO-MAG-WAVE/8 ELECTROMAGNETIC WAVES-2026_page-0009.jpg"
-  
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C_N":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 
-	 
-	 
-	 	  "C9_T9":[
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0009.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0011.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0013.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0014.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0015.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0016.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0017.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0018.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0019.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0020.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0021.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0022.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0023.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0024.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0025.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0026.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0027.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0028.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0029.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0020.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0031.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0032.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0033.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0034.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0035.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0036.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0037.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0038.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0039.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0040.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0041.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0042.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-RAYOPTICS/THEORY/9 RAY OPTICS AND OPTICAL INSTRUMENTS 2025_page-0043.jpg"
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C_N":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 
-	 
-	 	  "C10_T10":[
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0001.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0002.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0003.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0004.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0005.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0006.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0007.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0008.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0009.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0010.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0011.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0012.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0013.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0014.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0015.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0016.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0017.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0018.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0019.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0020.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0021.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0022.jpg",
-	"https://g10educationalplatform-physics.github.io/S-M--12-WAVE-OP/10 WAVE OPTICS 2026_page-0023.jpg"
-   
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C10_N10":[
-      "https://jitenclass9.github.io/S-M-WOR-ENG-POWER/WORK AND ENERGY NCERT.pdf"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 
-	 
-	 
-	 	  "C11_T11":[
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0009.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0011.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0012.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0013.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0014.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0015.jpg"
-    
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C_N":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 
-	 
-	 
-	 	  "C12_T12":[
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0009.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0011.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0012.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0013.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-ATOMS/12 ATOMS-2026_page-0014.jpg"
- 
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C_N":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 
-	 
-	 
-	  	  "C13_T13":[
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0009.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0011.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0012.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0013.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0014.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0015.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-NUCLEI/13 NUCLEI 2026_page-0016.jpg"
-    
-     ],
-	 	  "C_Q":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 	  "C_N":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	  "C_A":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
-     ],
-	 
-	 
-	 
-	 
-	 	  "C14_T14":[
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0002.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0003.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0004.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0005.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0006.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0007.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0008.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0009.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0010.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0011.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0012.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0013.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0014.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0015.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0016.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0017.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0018.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0019.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0020.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0021.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0022.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0023.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0024.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0025.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0026.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0027.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0028.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0029.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0030.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0031.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0032.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0033.jpg",
-  "https://g10educationalplatform-physics.github.io/S-M--12-SAMI-CONDUCTOR/14 SEMICONDUCTOR DEVICES AND DIGITAL CIRCUITS-2026_page-0034.jpg"
-   
      ],
 	 	  "C_Q":[
   "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
@@ -1069,6 +517,7 @@ let data = {
 };
 /* ================= STATE VARS ================= */
 let currentList = [], index = 0;
+let currentCode = "";   // ⭐ ADD THIS LINE
 let zoomLevel = 1, autoScale = 1;
 let img = document.getElementById('contentImg');
 let viewer = document.getElementById('viewer');
@@ -1109,10 +558,16 @@ menuBtn.addEventListener('click', () => {
 
 /* ============== LOAD SUBLIST ============== */
 function loadSub(code){
+ currentCode = code;   // save chapter code
   currentList = data[code] || [];
   preloadFirst(currentList);   // ← new line
 
   index = 0;
+  // Restore last page if saved
+let savedPage = localStorage.getItem("page_" + code);
+if(savedPage){
+  index = parseInt(savedPage);
+}
   imgX = imgY = 0;
 
   exitPDF();
@@ -1143,6 +598,7 @@ function preloadFirst(list){
 /* ============== LOAD PAGE (IMAGE or PDF) ============== */
 function loadPage(first=false){
   let url = currentList[index];
+   localStorage.setItem("page_" + currentCode, index); // ⭐ SAVE PAGE
   if(!url) return;
   if(url.toLowerCase().endsWith('.pdf')) { enterPDF(url); return; }
 
@@ -1186,9 +642,24 @@ if (!isDesktop && w >= 900 && w < 1200 && w > h) {
   // in case onload doesn't fire or is cached, still update
   pageNum.textContent = `Page ${index+1} / ${currentList.length}`;
   pageInput.value = index+1;
+  updateBookmarkIcon();   // ⭐ update bookmark highlight
   preloadNext();
 
 }
+function updateBookmarkIcon(){
+
+ let key = "bookmark_" + currentCode;
+
+ let bookmarks = JSON.parse(localStorage.getItem(key)) || [];
+
+ if(bookmarks && bookmarks.includes(index)){
+   bookmarkBtn.classList.add("active");
+ }else{
+   bookmarkBtn.classList.remove("active");
+ }
+
+}
+
 
 /* ============== CLAMP UTILITY ============== */
 function clamp(value, min, max){ return Math.min(Math.max(value, min), max); }
@@ -1196,18 +667,56 @@ function clamp(value, min, max){ return Math.min(Math.max(value, min), max); }
 /* ============== NAVIGATION ============== */
 nextBtn.addEventListener('click', ()=> {
   if(pdfMode.active){
-    if(pdfMode.page < pdfMode.total){ pdfMode.page++; renderPDFPage(); return; }
-    else { exitPDF(); if(index < currentList.length-1){ index++; imgX = imgY = 0; loadPage(true); } return; }
+    if(pdfMode.page < pdfMode.total){ 
+      pdfMode.page++; 
+      renderPDFPage();
+      viewer.scrollTop = 0;   // ADD THIS
+      return; 
+    }
+    else { 
+      exitPDF(); 
+      if(index < currentList.length-1){ 
+        index++; 
+        imgX = imgY = 0; 
+        loadPage(true); 
+        viewer.scrollTop = 0;   // ADD THIS
+      } 
+      return; 
+    }
   }
-  if(index < currentList.length-1){ index++; imgX = imgY = 0; loadPage(true); }
+  if(index < currentList.length-1){ 
+    index++; 
+    imgX = imgY = 0; 
+    loadPage(true); 
+    viewer.scrollTop = 0;   // ADD THIS
+  }
 });
 
 prevBtn.addEventListener('click', ()=> {
   if(pdfMode.active){
-    if(pdfMode.page > 1){ pdfMode.page--; renderPDFPage(); return; }
-    else { exitPDF(); if(index > 0){ index--; imgX = imgY = 0; loadPage(true); } return; }
+    if(pdfMode.page > 1){ 
+      pdfMode.page--; 
+      renderPDFPage();
+      viewer.scrollTop = 0;   // ADD THIS
+      return; 
+    }
+    else { 
+      exitPDF(); 
+      if(index > 0){ 
+        index--; 
+        imgX = imgY = 0; 
+        loadPage(true); 
+        viewer.scrollTop = 0;   // ADD THIS
+      } 
+      return; 
+    }
   }
-  if(index > 0){ index--; imgX = imgY = 0; loadPage(true); }
+  if(index > 0){ 
+    index--; 
+    imgX = imgY = 0; 
+    loadPage(true); 
+    viewer.scrollTop = 0;   // ADD THIS
+  }
 });
 
 pageInput.addEventListener('input', ()=> {
@@ -1296,12 +805,6 @@ viewer.addEventListener('touchmove', e => {
   }
 
 
-  
-  
-  
-  
-  
-  
   
   
   
@@ -1539,7 +1042,69 @@ function preloadNext() {
     }
 }
 
+function showClass(cls) {
+  document.getElementById("class11").style.display = "none";
+  document.getElementById("class12").style.display = "none";
+  document.getElementById(cls).style.display = "block";
+}
 
+function showBookmarks(){
+
+ if(!currentCode) return;
+
+ let key = "bookmark_" + currentCode;
+
+ let bookmarks = JSON.parse(localStorage.getItem(key)) || [];
+
+ if(bookmarks.length === 0){
+   alert("No bookmarks saved.");
+   return;
+ }
+
+ bookmarks.sort((a,b)=>a-b);
+
+ let popup = document.createElement("div");
+
+ popup.style.position = "fixed";
+ popup.style.top = "50%";
+ popup.style.left = "50%";
+ popup.style.transform = "translate(-50%,-50%)";
+ popup.style.background = "#222";
+ popup.style.color = "white";
+ popup.style.padding = "15px";
+ popup.style.borderRadius = "8px";
+ popup.style.zIndex = "9999";
+ popup.style.maxHeight = "300px";
+ popup.style.overflowY = "auto";
+
+ let html = "<h3>Bookmarks</h3>";
+
+ bookmarks.forEach(p=>{
+   html += `<div style="padding:5px;cursor:pointer" onclick="jumpToBookmark(${p})">Page ${p+1}</div>`;
+ });
+
+ html += `<div style="margin-top:10px;text-align:center">
+ <button onclick="this.parentElement.parentElement.remove()">Close</button>
+ </div>`;
+
+ popup.innerHTML = html;
+
+ document.body.appendChild(popup);
+
+}
+function jumpToBookmark(p){
+
+ index = p;
+
+ loadPage();
+
+ document.querySelectorAll("div").forEach(el=>{
+   if(el.style && el.style.zIndex === "9999"){
+     el.remove();
+   }
+ });
+
+}
 /* ===== BUY POPUP LOGIC (FIXED) ===== */
 /* ===== BUY POPUP LOGIC (DELAY + OUTSIDE CLICK) ===== */
 document.addEventListener('DOMContentLoaded', () => {
@@ -1576,7 +1141,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+let bookmarkBtn = document.getElementById("bookmarkBtn");
 
+bookmarkBtn.addEventListener("click", function(){
+
+ if(!currentCode) return;
+
+ let key = "bookmark_" + currentCode;
+
+ let bookmarks = JSON.parse(localStorage.getItem(key)) || [];
+
+ if(bookmarks.includes(index)){
+     bookmarks = bookmarks.filter(p => p !== index);
+     bookmarkBtn.classList.remove("active");
+ }else{
+     bookmarks.push(index);
+     bookmarkBtn.classList.add("active");
+ }
+
+ localStorage.setItem(key, JSON.stringify(bookmarks));
+});
 
 </script>
 <!-- ===== BUY HARD COPY POPUP ===== -->
@@ -1589,7 +1173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </p>
 
     <!-- 🔗 Replace the link later -->
-    <a href="https://smclass12physics-afk.github.io/S-M_12-physics-and-store/physics 12 store.html" id="buyPopupBtn" target="_blank">BUY HARD COPY</a>
+    <a href="https://smiitjeeche-art.github.io/sm-IIT-JEE-Chem-Data/SM store-chm/science 9 store.html" id="buyPopupBtn" target="_blank">BUY HARD COPY</a>
 
     <button id="closePopup">Maybe Later</button>
   </div>
@@ -1598,6 +1182,5 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
-
 
 
