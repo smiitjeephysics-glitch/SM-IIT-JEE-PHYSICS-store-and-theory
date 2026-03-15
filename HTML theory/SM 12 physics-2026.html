@@ -220,7 +220,23 @@ body { display:flex; height:100vh; overflow:hidden; }
   color: black;
 }
 	
-	
+.chapterInfo{
+    font-size:10px;
+    margin-top:3px;
+    line-height:1.2;
+}
+
+.chapterInfo .syllabus{
+    color:#ffff00;   /* bright yellow */
+    font-weight:bold;
+    display:block;
+}
+
+.chapterInfo .subject{
+    color:#ff3030;   /* bright red */
+    font-weight:bold;
+    display:block;
+}	
 	
 </style>
 </head>
@@ -249,6 +265,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 <div id="class11">
 
 	<div class="chapter">Chapter 1 UNITS & DIMENSIONS
+		<div class="chapterInfo">
+<span class="syllabus">Mains & Advance</span>
+<span class="subject">Physical Chemistry</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C111_T111')">ULTIMATE CONCEPTUAL NOTES</div>
         <div onclick="loadSub('C111_Q111')"> CHALLENGE BANK </div>
